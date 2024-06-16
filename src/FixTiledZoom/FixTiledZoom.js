@@ -26,7 +26,7 @@
 #include <pjsr/UndoFlag.jsh>
 #include <pjsr/StdIcon.jsh>
 #include <pjsr/StdButton.jsh>
-#include "AutoStretch.js"
+#include "stf.js"
 
 // define a global variable containing script's parameters
 var FixTiledZoomParameters = {
@@ -84,7 +84,7 @@ function getOptimalZoom()
     var maxZoom = 0;
 
     for ( var w in windows ) {
-        window = windows[w];
+        var window = windows[w];
         zoom = getOptimalZoomForWindow(window);
 
         maxZoom = (zoom > maxZoom) ? zoom : maxZoom;
@@ -149,13 +149,10 @@ function applyToAll()
 {
     zoomAllMainViews();
     var vl = new getAllMainViews();
-    let autoSTF = new AutoStretch();
-    
+
     for (var i = 0; i < vl.length; i++)
     {
-        // if (!viewIsStretched(vl[i])) {
-            autoSTF.Apply( vl[i], false );
-        // }
+        STFAutoStretch( vl[i] );
     }
 }
 
@@ -243,7 +240,6 @@ function FixTiledZoomDialog()
     this.zoomSpinner = new SpinBox( this );
     this.zoomSpinner.setRange( -15, 15 );
     
-    console.writeln("hmm " + FixTiledZoomParameters.zoom);
     this.zoomSpinner.value = FixTiledZoomParameters.zoom;
     // FixTiledZoomParameters.zoom = currentZoom;
     this.zoomSpinner.setFixedWidth( 50 );
