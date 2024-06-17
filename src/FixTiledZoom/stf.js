@@ -8,7 +8,7 @@
 #define DEFAULT_AUTOSTRETCH_TBGND   0.25
 // Apply the same STF to all nominal channels (true), or treat each channel
 // separately (false).
-#define DEFAULT_AUTOSTRETCH_CLINK   true
+#define DEFAULT_AUTOSTRETCH_CLINK   false
 
 /*
  * STF Auto Stretch routine

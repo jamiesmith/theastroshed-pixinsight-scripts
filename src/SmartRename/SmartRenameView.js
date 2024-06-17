@@ -181,7 +181,14 @@ function SmartRenameViewDialog()
     this.applyGlobalButton.setScaledFixedSize( 24, 24 );
     this.applyGlobalButton.toolTip = "Apply Global";
     this.applyGlobalButton.onMousePress = () => {
-        applyGlobally();
+        // applyGlobally();
+        console.writeln("IN HERE");
+        var vl = new getAllMainViews();
+
+        for (var i = 0; i < vl.length; i++)
+        {
+            renameView(vl[i], SmartRenameViewParameters.prefix, SmartRenameViewParameters.suffix);            
+        }
     };
 
     this.buttonSizer = new HorizontalSizer;
@@ -242,7 +249,7 @@ function SmartRenameViewDialog()
     this.batchModeCheckBox = new CheckBox( this );
     this.batchModeCheckBox.text = "Batch-mode cheat enabled";
     this.batchModeCheckBox.toolTip = "<p>When enabled you can drag the process icon on an image to do all</p>";
-    this.batchModeCheckBox.checked = FixTiledZoomParameters.batchMode == true;
+    this.batchModeCheckBox.checked = SmartRenameViewParameters.batchMode == true;
     this.batchModeCheckBox.onCheck = function( checked )
     {
         SmartRenameViewParameters.batchMode = checked;
