@@ -28,14 +28,6 @@
 #include <pjsr/StdButton.jsh>
 #include "stf.js"
 
-#define DEFAULT_AUTOSTRETCH_SCLIP  -2.80
-// Target mean background in the [0,1] range.
-#define DEFAULT_AUTOSTRETCH_TBGND   0.25
-// Apply the same STF to all nominal channels (true), or treat each channel
-// separately (false).
-#define DEFAULT_AUTOSTRETCH_CLINK   true
-
-
 // define a global variable containing script's parameters
 var FixTiledZoomParameters = {
     targetView: undefined,

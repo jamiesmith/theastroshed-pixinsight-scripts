@@ -61,31 +61,29 @@ var SmartRenameViewParameters = {
     }
 }
 
-function applyGlobally()
+function keywordValue( window, name )
 {
-    var vl = new getAllMainViews();
-
-    for (var i = 0; i < vl.length; i++)
-    {
-        renameView(vl[i], SmartRenameViewParameters.prefix, SmartRenameViewParameters.suffix);            
-    }
+   let keywords = window.keywords;
+   for ( let i = 0; i < keywords.length; ++i )
+      if ( keywords[i].name == name )
+         return keywords[i].strippedValue;
+   return null;
 }
 
 function renameView(view, prefix = "", suffix = "") 
 {
-    var filterProperty = "Instrument:Filter:Name"
-    if (view.hasProperty(filterProperty))
+    var filterName = keywordValue(view.window, "FILTER");
+    
+    if (filterName != "")
     {
-        // Without this set there's sometimes no history
-        //
         let undoFlag = UndoFlag_DefaultMode;
-        view.id = prefix + view.propertyValue(filterProperty) + suffix;
+        view.id = prefix + filterName + suffix;
     }
     else
     {
         console.show();
-        console.warningln("Unable to determine filter, Instrument:Filter:Name not set");
-    }
+        console.warningln("Unable to determine filter");
+    }    
 }
 
 function getAllMainViews()
@@ -182,7 +180,6 @@ function SmartRenameViewDialog()
     this.applyGlobalButton.toolTip = "Apply Global";
     this.applyGlobalButton.onMousePress = () => {
         // applyGlobally();
-        console.writeln("IN HERE");
         var vl = new getAllMainViews();
 
         for (var i = 0; i < vl.length; i++)
