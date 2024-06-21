@@ -18,7 +18,7 @@
    this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#feature-id    FixTiledZoom_v0.1.1 : TheAstroShed > Fix the zoom for tiled windows
+#feature-id    FixTiledZoom_v0.1.2 : TheAstroShed > Fix the zoom for tiled windows
 #feature-info  This script renames the target view after the filter name
 
 #include <pjsr/TextAlign.jsh>

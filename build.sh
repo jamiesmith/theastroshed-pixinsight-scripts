@@ -20,7 +20,7 @@ plugins="$plugins SmartRenameView.js"
 # done
 
 pluginName="TheAstroShedScripts"
-zipFileName="${pluginName}-$(date "+%Y-%m-%d")-1.zip"
+zipFileName="${pluginName}-$(date "+%Y-%m-%d")-2.zip"
 zip -v "${releasesDir}/${zipFileName}" ${scriptsDir}/*
 sha1=$(sha1sum ${releasesDir}/${zipFileName} | awk '{print $1}')
 echo $sha1
