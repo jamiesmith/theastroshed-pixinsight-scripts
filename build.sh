@@ -20,12 +20,13 @@ plugins="$plugins SmartRenameView.js"
 # done
 
 pluginName="TheAstroShedScripts"
-zipFileName="${pluginName}-$(date "+%Y-%m-%d")-2.zip"
+zipFileName="${pluginName}-$(date "+%Y-%m-%d")-3.zip"
 zip -v "${releasesDir}/${zipFileName}" ${scriptsDir}/*
 sha1=$(sha1sum ${releasesDir}/${zipFileName} | awk '{print $1}')
 echo $sha1
 releaseDate=$(date +"%Y%m%d")
-version=$(date +"%Y-%m-%d")
+version="$(date +"%Y-%m-%d")-3"
+
 
 cat << EOF > $releasesDir/updates.xri
 <?xml version="1.0" encoding="UTF-8"?>

@@ -4,9 +4,9 @@
       <p>This is the repository for PixInsight scripts by theastroshed.com, featuring &quot;Fixed Tiled Zoom&quot; and &quot;Smart Rename View&quot;.</p>
    </description>
    <platform os="all" arch="noarch" version="1.8.8:1.9.9">
-      <package fileName="TheAstroShedScripts-2024-06-21-2.zip" sha1="c3128383466f186a9ac177d3e7aecf2c2490004f" type="script" releaseDate="20240621">
+      <package fileName="TheAstroShedScripts-2024-06-21-3.zip" sha1="164b9c27aedbfbafcd6ff7e3759c720d2411f4b4" type="script" releaseDate="20240621">
          <title>
-                The Astroshed Plugins version 2024-06-21 
+                The Astroshed Plugins version 2024-06-21-3 
             </title>
          <description>
             <p>
@@ -16,4 +16,4 @@
       </package>
    </platform>
 </xri>
-<Signature developerId="Jamie Smith" timestamp="2024-06-21T15:53:46.662Z" encoding="Base64">iI3Sjwnp9Zpqc0wGThg9kx4WVxKUM9yRzZ4UlYKpOQD8wMh43DzYHW0SRnLGpiiGrJw3jB50raZ9fVaq+g9HCA==</Signature>
+<Signature developerId="Jamie Smith" timestamp="2024-06-21T15:59:54.651Z" encoding="Base64">+y4zct5dpUmfXUJTAFITPaWjIomu7yZ3P1/1aZkhsN5uKYhAU6ApwEOkjsnxJ11M0Zth72pLijPuQUrIdX5SCA==</Signature>
