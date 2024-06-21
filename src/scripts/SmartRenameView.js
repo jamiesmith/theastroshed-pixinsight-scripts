@@ -61,6 +61,16 @@ var SmartRenameViewParameters = {
     }
 }
 
+function applyGlobally()
+{
+    var vl = new getAllMainViews();
+
+    for (var i = 0; i < vl.length; i++)
+    {
+        renameView(vl[i], SmartRenameViewParameters.prefix, SmartRenameViewParameters.suffix);            
+    }
+}
+
 function keywordValue( window, name )
 {
    let keywords = window.keywords;
