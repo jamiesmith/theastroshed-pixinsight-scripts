@@ -20,7 +20,7 @@ plugins="$plugins SmartRenameView.js"
 # done
 
 pluginName="TheAstroShedScripts"
-zipFileName="${pluginName}-$(date "+%Y-%m-%d").zip"
+zipFileName="${pluginName}-$(date "+%Y-%m-%d")-1.zip"
 zip -v "${releasesDir}/${zipFileName}" ${scriptsDir}/*
 sha1=$(sha1sum ${releasesDir}/${zipFileName} | awk '{print $1}')
 echo $sha1
@@ -43,7 +43,7 @@ cat << EOF > $releasesDir/updates.xri
             </title>
             <description>
                 <p>
-                    2024-06-21: Initial release
+                    2024-06-21-1: Initial release fix
                 </p>
             </description>
         </package>
