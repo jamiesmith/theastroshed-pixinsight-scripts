@@ -1,32 +1,45 @@
-#!/bin/sh
+#!/usr/local/bin/bash
+
+shopt -s globstar
 
 
 scriptsDir="src/scripts"
-releasesDir="releases"
-plugins=""
-plugins="$plugins FixTiledZoom.js"
-plugins="$plugins SmartRenameView.js"
+releasesDir="$(pwd)/releases"
 
+buildDir=tmpBuild
+rm -rf "${buildDir}"
+mkdir -p "${buildDir}"
+cp -r src "${buildDir}/"
+cd "${buildDir}"
 
+release=v0.1.5
 
-# for plugin in $plugins
-# do
-#     pluginName=$(basename $plugin .js)
-#     zipFileName="${pluginName}-$(date "+%Y-%m-%d").zip"
-#     echo zip -v "${releasesDir}/${pluginName}.zip" ${scriptsDir}/${pluginName}*
-#     zip -v "${releasesDir}/${zipFileName}" ${scriptsDir}/${pluginName}*
-#     echo "$plugin $pluginName"
-#
-# done
+for file in $(find . -type f -name *.js)
+do
+    echo $file
+    sed -i "" "s|<VERSION>|${release}|g" $file
+done
 
 pluginName="TheAstroShedScripts"
-suffix=4
-zipFileName="${pluginName}-$(date "+%Y-%m-%d")-${suffix}.zip"
+today=$(date +"%Y-%m-%d")
+
+# figure out if we need a suffix
+#
+suffix=""
+baseZipFileName="${pluginName}-${today}"
+if [ -f "${releasesDir}/${baseZipFileName}.zip" ]
+then
+    suffix="-$(ls "${releasesDir}" | grep -c "${baseZipFileName}")"
+    echo "Needs a suffix [$suffix]"
+fi
+zipFileName="${baseZipFileName}${suffix}.zip"
 zip -v "${releasesDir}/${zipFileName}" ${scriptsDir}/*
 sha1=$(sha1sum ${releasesDir}/${zipFileName} | awk '{print $1}')
 echo $sha1
-releaseDate=$(date +"%Y%m%d")
-version="$(date +"%Y-%m-%d")-${suffix}"
+
+exit
+releaseDate=${today}
+version="${today}-${suffix}"
 
 
 cat << EOF > $releasesDir/updates.xri
@@ -45,7 +58,7 @@ cat << EOF > $releasesDir/updates.xri
             </title>
             <description>
                 <p>
-                    2024-06-21-${suffix}: Initial release fix
+                    ${version}: Initial release fix
                 </p>
             </description>
         </package>
