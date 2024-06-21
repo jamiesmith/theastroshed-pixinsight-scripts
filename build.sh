@@ -24,6 +24,7 @@ zipFileName="${pluginName}-$(date "+%Y-%m-%d").zip"
 zip -v "${releasesDir}/${zipFileName}" ${scriptsDir}/*
 sha1=$(sha1sum ${releasesDir}/${zipFileName} | awk '{print $1}')
 echo $sha1
+releaseDate=$(date +"%Y%m%d")
 version=$(date +"%Y-%m-%d")
 
 cat << EOF > $releasesDir/updates.xri
@@ -36,7 +37,7 @@ cat << EOF > $releasesDir/updates.xri
         <package fileName="${zipFileName}" 
                 sha1="${sha1}" 
                 type="script" 
-                releaseDate="${version}">
+                releaseDate="${releaseDate}">
             <title>
                 The Astroshed Plugins version $version 
             </title>
