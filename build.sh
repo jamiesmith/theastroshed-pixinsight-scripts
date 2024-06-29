@@ -37,8 +37,8 @@ zip -v "${releasesDir}/${zipFileName}" ${scriptsDir}/*
 sha1=$(sha1sum ${releasesDir}/${zipFileName} | awk '{print $1}')
 echo $sha1
 
-releaseDate=${today}
-version="${today}-${suffix}"
+releaseDate=$(echo ${today} | sed 's|-||g')
+version="${today}${suffix}"
 
 echo zipFileName is $zipFileName
 
