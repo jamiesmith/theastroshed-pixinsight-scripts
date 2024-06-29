@@ -37,9 +37,10 @@ zip -v "${releasesDir}/${zipFileName}" ${scriptsDir}/*
 sha1=$(sha1sum ${releasesDir}/${zipFileName} | awk '{print $1}')
 echo $sha1
 
-exit
 releaseDate=${today}
 version="${today}-${suffix}"
+
+echo zipFileName is $zipFileName
 
 cat << EOF > $releasesDir/updates.xri
 <?xml version="1.0" encoding="UTF-8"?>
