@@ -22,3 +22,11 @@ view name would be `foo_<filter>_bar`, or `foo_Red_bar`.
     
 If you click the `Batch-mode cheat enabled` and save a process icon it will apply to
 _all_ image windows rather than just the one you drop it on (kind of like a global apply)
+
+
+## Release History
+
+- TheAstroShedScripts-2024-06-29.zip
+    - Fixed an issue for SmartRename of files without filters, leaving the view named "null"
+- TheAstroShedScripts-2024-06-21-4
+    - Initial Revision

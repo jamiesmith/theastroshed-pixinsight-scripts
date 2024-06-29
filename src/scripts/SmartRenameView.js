@@ -84,7 +84,7 @@ function renameView(view, prefix = "", suffix = "")
 {
     var filterName = keywordValue(view.window, "FILTER");
     
-    if (filterName != "")
+    if (filterName && filterName != "")
     {
         let undoFlag = UndoFlag_DefaultMode;
         view.id = prefix + filterName + suffix;
@@ -92,7 +92,7 @@ function renameView(view, prefix = "", suffix = "")
     else
     {
         console.show();
-        console.warningln("Unable to determine filter");
+        console.warningln("Unable to determine filter: " + view.id);
     }    
 }
 

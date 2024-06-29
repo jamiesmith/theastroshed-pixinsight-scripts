@@ -41,7 +41,6 @@ exit
 releaseDate=${today}
 version="${today}-${suffix}"
 
-
 cat << EOF > $releasesDir/updates.xri
 <?xml version="1.0" encoding="UTF-8"?>
 <xri version="1.0">
@@ -58,7 +57,7 @@ cat << EOF > $releasesDir/updates.xri
             </title>
             <description>
                 <p>
-                    ${version}: Initial release fix
+                    ${version}: Fixed an issue for files without filters, leaving the view named "null"
                 </p>
             </description>
         </package>
