@@ -98,13 +98,17 @@ function renameView(view, prefix = "", suffix = "")
 
 function getAllMainViews()
 {
-   var mainViews = [];
-   var images = ImageWindow.windows;
-   for ( var i in images )
-   {
-      if (images[i].mainView.isMainView) mainViews.push(images[i].mainView);
-   }
-   return mainViews;
+    var mainViews = [];
+    var images = ImageWindow.windows;
+    for ( var i in images )
+    {
+        // Skip any that aren't visible (Icons, different workspace, shades, etc)
+        //
+        if (images[i].mainView.isMainView && images[i].visible && (!images[i].iconic)) {   
+            mainViews.push(images[i].mainView);
+        }
+    }
+    return mainViews;
 }
 
 /*

@@ -12,7 +12,9 @@ mkdir -p "${buildDir}"
 cp -r src "${buildDir}/"
 cd "${buildDir}"
 
-release=v0.1.5
+# CHANGE THIS, then run the script
+#
+release=v0.1.6
 
 for file in $(find . -type f -name *.js)
 do
@@ -58,7 +60,7 @@ cat << EOF > $releasesDir/updates.xri
             </title>
             <description>
                 <p>
-                    ${version}: Fixed an issue for files without filters, leaving the view named "null"
+                    ${version}: Skip any that aren't visible (Icons, different workspace, shades, etc)
                 </p>
             </description>
         </package>

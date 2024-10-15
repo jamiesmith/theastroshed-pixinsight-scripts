@@ -99,7 +99,7 @@ function zoomAllMainViews()
     var zoomOut = FixTiledZoomParameters.zoom;
     
     for ( var i in images ) {
-        if (images[i].mainView.isMainView) {
+        if (images[i].mainView.isMainView && images[i].visible && (!images[i].iconic)) {
             if (FixTiledZoomParameters.autoZoom)
             {
                 zoomOut = getOptimalZoomForWindow(images[i]);
@@ -138,7 +138,7 @@ function getAllMainViews()
     var mainViews = [];
     var images = ImageWindow.windows;
     for ( var i in images ) {
-        if (images[i].mainView.isMainView) {
+        if (images[i].mainView.isMainView && images[i].visible && (!images[i].iconic)) {            
             mainViews.push(images[i].mainView);
         }
     }
