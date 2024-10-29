@@ -4,3 +4,4 @@
 - change the version number in build.sh
 - run ./build.sh
 - sign updates.xri
+- commit/push
