@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xri version="1.0">
-   <description>
-      <p>This is the repository for PixInsight scripts by theastroshed.com, featuring &quot;Fixed Tiled Zoom&quot; and &quot;Smart Rename View&quot;.</p>
-   </description>
-   <platform os="all" arch="noarch" version="1.8.8:1.9.9">
-      <package fileName="TheAstroShedScripts-2024-10-15.zip" sha1="e2df7341c10b037fbe7926d970c653e242823e83" type="script" releaseDate="20241015">
-         <title>
-                The Astroshed Plugins version 2024-10-15 
+    <description>
+        <p>This is the repository for PixInsight scripts by theastroshed.com, featuring "Fixed Tiled Zoom" and "Smart Rename View".</p>
+    </description>
+    <platform os="all" arch="noarch" version="1.8.8:1.9.9">
+        <package fileName="TheAstroShedScripts-2024-10-29.zip" 
+                sha1="87be7ff194f07770adee85851c10e43b862edcbc" 
+                type="script" 
+                releaseDate="20241029">
+            <title>
+                The Astroshed Plugins version 2024-10-29 
             </title>
-         <description>
-            <p>
-                    2024-10-15: Skip any that aren&apos;t visible (Icons, different workspace, shades, etc)
+            <description>
+                <p>
+                    2024-10-29: Skip any that aren't visible (Icons, different workspace, shades, etc)
                 </p>
-         </description>
-      </package>
-   </platform>
+            </description>
+        </package>
+    </platform>
 </xri>
-<Signature developerId="Jamie Smith" timestamp="2024-10-15T19:35:07.763Z" encoding="Base64">N62aIqRDkKGlobL+5tmFAlMCLznAfZY+mArYW7LajIY9dCWDCwJuuuCwcEkioDOW7IZxi9mso7w0R5qo5XWIBg==</Signature>

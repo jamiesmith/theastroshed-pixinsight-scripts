@@ -18,7 +18,7 @@
    this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#feature-id    SmartRenameView_v0.1.4 : TheAstroShed > Smart Rename View as Filter
+#feature-id    SmartRenameView_<VERSION> : TheAstroShed > Smart Rename View as Filter
 #feature-info  This script renames the target view after the filter name
 
 #include <pjsr/TextAlign.jsh>

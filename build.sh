@@ -14,11 +14,11 @@ cd "${buildDir}"
 
 # CHANGE THIS, then run the script
 #
-release=v0.1.8
+release=v0.1.9
 
 for file in $(find . -type f -name *.js)
 do
-    echo $file
+    echo "Setting version in: " $file
     sed -i "" "s|<VERSION>|${release}|g" $file
 done
 
@@ -32,7 +32,7 @@ baseZipFileName="${pluginName}-${today}"
 if [ -f "${releasesDir}/${baseZipFileName}.zip" ]
 then
     suffix="-$(ls "${releasesDir}" | grep -c "${baseZipFileName}")"
-    echo "Needs a suffix [$suffix]"
+    echo "Archive for today already exists, adding a suffix [$suffix]"
 fi
 zipFileName="${baseZipFileName}${suffix}.zip"
 zip -v "${releasesDir}/${zipFileName}" ${scriptsDir}/*
