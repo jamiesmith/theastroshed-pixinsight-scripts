@@ -14,7 +14,7 @@ cd "${buildDir}"
 
 # CHANGE THIS, then run the script
 #
-release=v0.1.9
+release=v0.1.10
 
 for file in $(find . -type f -name *.js)
 do
