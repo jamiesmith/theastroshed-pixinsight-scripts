@@ -14,7 +14,7 @@ cd "${buildDir}"
 
 # CHANGE THIS, then run the script
 #
-release=v0.1.11
+release=v0.1.12
 
 for file in $(find . -type f -name *.js)
 do
@@ -35,6 +35,9 @@ then
     echo "Archive for today already exists, adding a suffix [$suffix]"
 fi
 zipFileName="${baseZipFileName}${suffix}.zip"
+
+read -p "Sign the scripts, then press enter to continue"
+
 zip -v "${releasesDir}/${zipFileName}" ${scriptsDir}/*
 sha1=$(sha1sum ${releasesDir}/${zipFileName} | awk '{print $1}')
 echo $sha1
@@ -68,4 +71,4 @@ cat << EOF > $releasesDir/updates.xri
 </xri>
 EOF
 
-echo "Don't forget to sign the updates file!"
+# echo "Don't forget to sign the updates file!"
