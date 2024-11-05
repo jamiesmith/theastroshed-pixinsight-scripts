@@ -1,8 +1,15 @@
+# NOTE
+
+this repository has been relocated to a more simple URL. You can visit that
+[repo](https://github.com/jamiesmith/pixinsight-repo) to see details, or just 
+add (or change) to the new repo URL: `https://raw.githubusercontent.com/jamiesmith/pixinsight-repo/main/`
+
+
 # theastroshed-pixinsight-scripts
 
-repository for PixInsight scripts and utilities
+FORMER repository for PixInsight scripts and utilities
 Add this to PixInsight:
-`https://raw.githubusercontent.com/jamiesmith/theastroshed-pixinsight-scripts/main/releases/`
+`https://raw.githubusercontent.com/jamiesmith/pixinsight-repo/main/`
 
 Note: Don't omit the ending `/` or you might get a `404` return code
 
